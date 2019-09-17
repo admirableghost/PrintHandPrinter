@@ -1,4 +1,4 @@
-package cordova-plugin-printhand-printer;
+package cordova.plugin.printhand.printer;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -37,11 +37,10 @@ public class PrintHandPrinterPlugin extends CordovaPlugin {
     private void print(String content, CallbackContext callbackContext) {
         if (content != null && content.length() > 0) {
             try {
-
+                callbackContext.success(content);
             } catch (Exception ex) {
                 callbackContext.error("Something went wrong " + ex);
             }
-            callbackContext.success(content);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
